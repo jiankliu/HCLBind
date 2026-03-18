@@ -1,0 +1,31 @@
+CSV_PATH: "data/qbiolip/02_qbiolip.csv"
+MODEL_NAME: "pretrain"
+BATCH_SIZE: 224
+VAL_BATCH_SIZE: 64
+LR: 4e-4
+EPOCHS: 1000
+PROT_DIM: 960
+LIG_DIM: 768 
+HIDDEN_DIM: 256
+NUM_HEADS: 4
+MAX_DOMAINS: 10
+ESM_PATH: "PATH-TO-ESM"
+NUM_WORKERS: 4
+LAMBDA_LPM: 1
+LAMBDA_IDD: 0.5
+seed: 42
+emb_path: "data/qbiolip/embeddings"
+biolip_lig_root: "data/qbiolip/nonredund_lig"
+
+cluster_path: 'data/qbiolip/clusters-by-entity-30.txt'
+
+esm_name: 'Synthyra/ESMplusplus_small'
+molformer_name: "ibm/MoLFormer-XL-both-10pct"
+lora_r: 8
+lora_alpha: 8
+
+peft: True
+use_amp: bf16
+checkpointing: True
+
+wandb_project: "pretrain"
