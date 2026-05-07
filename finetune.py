@@ -563,7 +563,8 @@ def main():
         if 'hclbind' in n:
             p.requires_grad = True
         else:
-            p.requires_grad = False
+            if not cfg.peft:
+                p.requires_grad = False
     total_params = sum(p.numel() for p in model.parameters())
     trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
     print(f'Total parameters: {total_params}, Trainable parameters: {trainable_params}')
